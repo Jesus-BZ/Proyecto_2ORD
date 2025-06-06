@@ -10,12 +10,34 @@ body{
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin: 20px auto;
+    margin-top: 60px ;
+    margin-left: 150px;
     padding: 20px;
-    display: flex;
+    display: inline-block;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
 
+}
+
+.card-inicio{
+    text-align: center;
+    margin-left:42%;
+    margin-top: 50px;
+    width:300px;
+    height: 350px;
+    background-color: #fff;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-img{
+width:200px;
+height: 200px;
+border-radius: 10%;
+margin-left:30px;
+margin-top: 40px;
+margin-bottom: 30px;
 }
 
 .formulario{
@@ -24,4 +46,23 @@ body{
     flex-direction: column;
     margin: 10px ;
     
+}
+nav{
+
+    background-color:rgb(70, 130, 180);
+    position:sticky;
+    top:0px;
+}
+nav ul{
+    display:flex;
+    justify-content: space-around;
+    list-style: none;
+}
+nav ul li a{
+   display:block;
+   color: rgb(152, 251, 152);
+}
+nav ul li a:hover{
+    border-color: rgb(152, 251, 152);
+    background-color:rgb(70, 110, 180);
 }
