@@ -16,17 +16,17 @@ CREATE TABLE usuario (
 CREATE TABLE potcast (
     id_potcast INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(30),
-    valoracion DECIMAL(4,2) -- NUMBER(4,2) se convierte a DECIMAL(4,2)
+    valoracion DECIMAL(4,2) 
 );
 
 CREATE TABLE comentarios (
     id_valoracion INT PRIMARY KEY AUTO_INCREMENT,
     id_usuario INT NOT NULL,
-    id_podcast INT NOT NULL, -- 'id_podcast' es el nombre de la columna en esta tabla
-    valoracion DECIMAL(4,2), -- NUMBER(4,2) se convierte a DECIMAL(4,2)
-    descripcion VARCHAR(30), -- 'descripcion' se mantiene como VARCHAR(30)
+    id_podcast INT NOT NULL, 
+    valoracion DECIMAL(4,2),
+    descripcion VARCHAR(30), 
     FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario) ON DELETE CASCADE,
-    FOREIGN KEY (id_podcast) REFERENCES potcast(id_potcast) ON DELETE CASCADE -- 'id_potcast' en la tabla 'potcast'
+    FOREIGN KEY (id_podcast) REFERENCES potcast(id_potcast) ON DELETE CASCADE 
 );
 
 
@@ -36,12 +36,15 @@ INSERT INTO usuario(nombre, email) VALUES ('mohamed','elmoha@gmail.com');
 INSERT INTO usuario(nombre, email) VALUES ('laura','laurita@gmail.com');
 
 
-INSERT INTO potcast (titulo, valoracion) VALUES ('mitologia griega', 9.50); -- Removidos ceros iniciales en 09.50
-INSERT INTO potcast (titulo, valoracion) VALUES ('mitologia japonesa', 7.50); -- Removidos ceros iniciales
-INSERT INTO potcast (titulo, valoracion) VALUES ('mi experiencia en la carcel', 6.50); -- Removidos ceros iniciales
-INSERT INTO potcast (titulo, valoracion) VALUES ('como hacer tradin', 7.00); -- Removidos ceros iniciales
+INSERT INTO potcast (titulo, valoracion) VALUES ('mitologia griega', 9.50); 
+INSERT INTO potcast (titulo, valoracion) VALUES ('mitologia japonesa', 7.50); 
+INSERT INTO potcast (titulo, valoracion) VALUES ('mi experiencia en la carcel', 6.50); 
+INSERT INTO potcast (titulo, valoracion) VALUES ('como hacer tradin', 7.00); 
 
-INSERT INTO comentarios (id_usuario, id_podcast, valoracion, descripcion) VALUES (1, 1, 6.58, 'increible me ha encantado '); -- Removidos ceros iniciales
-INSERT INTO comentarios (id_usuario, id_podcast, valoracion, descripcion) VALUES (2, 2, 7.85, 'tiene todo lo q necesitaba'); -- Removidos ceros iniciales
-INSERT INTO comentarios (id_usuario, id_podcast, valoracion, descripcion) VALUES (2, 2, 4.99, 'mejorable '); -- Removidos ceros iniciales
+INSERT INTO comentarios (id_usuario, id_podcast, valoracion, descripcion) VALUES (1, 1, 6.58, 'increible me ha encantado '); ceros iniciales
+
+INSERT INTO comentarios (id_usuario, id_podcast, valoracion, descripcion) VALUES (2, 2, 7.85, 'tiene todo lo q necesitaba'); ceros iniciales
+
+INSERT INTO comentarios (id_usuario, id_podcast, valoracion, descripcion) VALUES (2, 2, 4.99, 'mejorable '); 
+
 INSERT INTO comentarios (id_usuario, id_podcast, valoracion, descripcion) VALUES (2, 2, 9.60, 'me volvere millonario por esto'); 
